@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEasy - Premium Car Rentals</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('cover.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            margin-bottom: 50px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .car-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .car-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-car me-2"></i>DriveEasy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vehicles.html">Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Premium Car Rentals Made Easy</h1>
+            <p class="lead mb-5">Choose from our wide range of luxury and economy vehicles for your next journey</p>
+            <a href="vehicles.html" class="btn btn-primary btn-lg px-4 me-2">Browse Vehicles</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Search Form -->
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label class="form-label">Pick-Up Location</label>
+                                    <select class="form-select">
+                                        <option selected>Select Location</option>
+                                        <option>New York</option>
+                                        <option>Los Angeles</option>
+                                        <option>Chicago</option>
+                                        <option>Miami</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Pick-Up Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Drop-Off Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Vehicle Type</label>
+                                    <select class="form-select">
+                                        <option selected>All Types</option>
+                                        <option>Economy</option>
+                                        <option>SUV</option>
+                                        <option>Luxury</option>
+                                        <option>Sports</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="container mb-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Safe & Secure</h3>
+                <p>All our vehicles undergo rigorous safety checks and come with comprehensive insurance coverage.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3>Best Prices</h3>
+                <p>Competitive rates with no hidden charges. Price match guarantee on all bookings.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our customer service team is available round the clock to assist you with any queries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Vehicles -->
+    <section class="container mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Popular Vehicles</h2>
+            <a href="vehicles.html" class="btn btn-outline-primary">View All</a>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card car-card h-100">
+                    <img src="1.jpeg" class="card-img-top" alt="Toyota Camry">
+                    <div class="card-body">
+                        <h5 class="card-title">Toyota Camry</h5>
+                        <p class="text-muted">Sedan | Automatic | 5 Seats</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-primary">$49/day</span>
+                            <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card car-card h-100">
+                    <img src="2.jpeg" class="card-img-top" alt="Ford Mustang">
+                    <div class="card-body">
+                        <h5 class="card-title">Ford Mustang</h5>
+                        <p class="text-muted">Sports | Automatic | 4 Seats</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-primary">$89/day</span>
+                            <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card car-card h-100">
+                    <img src="3.jpeg" class="card-img-top" alt="Range Rover">
+                    <div class="card-body">
+                        <h5 class="card-title">Range Rover</h5>
+                        <p class="text-muted">SUV | Automatic | 7 Seats</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-primary">$99/day</span>
+                            <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card car-card h-100">
+                    <img src="4.jpeg" class="card-img-top" alt="Mercedes S-Class">
+                    <div class="card-body">
+                        <h5 class="card-title">Mercedes S-Class</h5>
+                        <p class="text-muted">Luxury | Automatic | 5 Seats</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fw-bold text-primary">$129/day</span>
+                            <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-light py-5 mb-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Customers Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"The booking process was seamless and the car was in perfect condition. Will definitely use DriveEasy again!"</p>
+                            <div class="mt-3">
+                                <img src="khan.jpg" class="rounded-circle mb-2" width="60" alt="Customer">
+                                <h6 class="mb-0">Feroz Khan</h6>
+                                <small class="text-muted">Business Traveler</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Excellent service and great prices. The Mustang I rented was an absolute dream to drive on my road trip."</p>
+                            <div class="mt-3">
+                                <img src="bilal.jpg" class="rounded-circle mb-2" width="60" alt="Customer">
+                                <h6 class="mb-0">bilal abbas</h6>
+                                <small class="text-muted">Vacationer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="card-text">"Quick and easy rental process. The car was clean and ready when I arrived. Highly recommended!"</p>
+                            <div class="mt-3">
+                                <img src="zehra.jpg" class="rounded-circle mb-2" width="60" alt="Customer">
+                                <h6 class="mb-0">Fatima Zehra</h6>
+                                <small class="text-muted">Family Traveler</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 mb-5" style="background-color: var(--primary-color); color: white;">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready for Your Next Adventure?</h2>
+            <p class="lead mb-4">Join thousands of satisfied customers who trust DriveEasy for their car rental needs</p>
+            <a href="vehicles.html" class="btn btn-light btn-lg px-4 me-2">Browse Vehicles</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5><i class="fas fa-car me-2"></i>DriveEasy</h5>
+                    <p>Premium car rental service offering the best vehicles at competitive prices with exceptional customer service.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="vehicles.html" class="text-white">Vehicles</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Tariq Road B 123</li>
+                        <li><i class="fas fa-phone me-2"></i> +92 345 2345677</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@driveeasy.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get special offers and updates</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 DriveEasy. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

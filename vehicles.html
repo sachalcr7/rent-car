@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet - DriveEasy</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .car-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .car-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .vehicle-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 50px;
+        }
+        
+        .filter-card {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .badge-category {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-car me-2"></i>DriveEasy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="vehicles.html">Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="vehicle-hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Our Vehicle Fleet</h1>
+            <p class="lead mb-5">Choose from our wide selection of premium vehicles for every need and budget</p>
+        </div>
+    </section>
+
+    <!-- Vehicle Listing -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="card filter-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Filter Vehicles</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Vehicle Type</label>
+                                <select class="form-select">
+                                    <option selected>All Types</option>
+                                    <option>Economy</option>
+                                    <option>SUV</option>
+                                    <option>Luxury</option>
+                                    <option>Sports</option>
+                                    <option>Minivan</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Transmission</label>
+                                <select class="form-select">
+                                    <option selected>All</option>
+                                    <option>Automatic</option>
+                                    <option>Manual</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Price Range</label>
+                                <input type="range" class="form-range" min="20" max="200" step="10" id="priceRange">
+                                <div class="d-flex justify-content-between">
+                                    <span>$20</span>
+                                    <span>$200</span>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="availableNow">
+                                <label class="form-check-label" for="availableNow">Available Now</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Available Vehicles</h2>
+                    <div class="d-flex align-items-center">
+                        <span class="me-2">Sort by:</span>
+                        <select class="form-select form-select-sm" style="width: auto;">
+                            <option selected>Price (Low to High)</option>
+                            <option>Price (High to Low)</option>
+                            <option>Name (A-Z)</option>
+                            <option>Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Vehicle 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card car-card h-100">
+                            <span class="badge bg-primary badge-category">Economy</span>
+                            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3" class="card-img-top" alt="Toyota Camry">
+                            <div class="card-body">
+                                <h5 class="card-title">Toyota Camry 2023</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-car me-2"></i>Sedan | Automatic</p>
+                                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>5 Seats</p>
+                                <p class="text-muted mb-3"><i class="fas fa-gas-pump me-2"></i>Hybrid</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="fw-bold text-primary">$49/day</span>
+                                        <span class="d-block text-muted small">$320/week</span>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card car-card h-100">
+                            <span class="badge bg-danger badge-category">Sports</span>
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3" class="card-img-top" alt="Ford Mustang">
+                            <div class="card-body">
+                                <h5 class="card-title">Ford Mustang GT 2022</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-car me-2"></i>Sports | Automatic</p>
+                                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>4 Seats</p>
+                                <p class="text-muted mb-3"><i class="fas fa-gas-pump me-2"></i>Premium</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="fw-bold text-primary">$89/day</span>
+                                        <span class="d-block text-muted small">$580/week</span>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card car-card h-100">
+                            <span class="badge bg-success badge-category">SUV</span>
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3" class="card-img-top" alt="Range Rover">
+                            <div class="card-body">
+                                <h5 class="card-title">Range Rover Sport 2023</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-car me-2"></i>SUV | Automatic</p>
+                                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>7 Seats</p>
+                                <p class="text-muted mb-3"><i class="fas fa-gas-pump me-2"></i>Diesel</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="fw-bold text-primary">$99/day</span>
+                                        <span class="d-block text-muted small">$650/week</span>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card car-card h-100">
+                            <span class="badge bg-warning text-dark badge-category">Luxury</span>
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3" class="card-img-top" alt="Mercedes S-Class">
+                            <div class="card-body">
+                                <h5 class="card-title">Mercedes S-Class 2023</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-car me-2"></i>Luxury | Automatic</p>
+                                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>5 Seats</p>
+                                <p class="text-muted mb-3"><i class="fas fa-gas-pump me-2"></i>Premium</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="fw-bold text-primary">$129/day</span>
+                                        <span class="d-block text-muted small">$850/week</span>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card car-card h-100">
+                            <span class="badge bg-primary badge-category">Economy</span>
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3" class="card-img-top" alt="Honda Civic">
+                            <div class="card-body">
+                                <h5 class="card-title">Honda Civic 2023</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-car me-2"></i>Sedan | Automatic</p>
+                                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>5 Seats</p>
+                                <p class="text-muted mb-3"><i class="fas fa-gas-pump me-2"></i>Regular</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="fw-bold text-primary">$45/day</span>
+                                        <span class="d-block text-muted small">$290/week</span>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card car-card h-100">
+                            <span class="badge bg-info text-dark badge-category">Minivan</span>
+                            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3" class="card-img-top" alt="Chrysler Pacifica">
+                            <div class="card-body">
+                                <h5 class="card-title">Chrysler Pacifica 2023</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-car me-2"></i>Minivan | Automatic</p>
+                                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>7 Seats</p>
+                                <p class="text-muted mb-3"><i class="fas fa-gas-pump me-2"></i>Regular</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="fw-bold text-primary">$65/day</span>
+                                        <span class="d-block text-muted small">$420/week</span>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="py-5 mb-5" style="background-color: var(--primary-color); color: white;">
+        <div class="container text-center">
+            <h2 class="mb-4">Can't Find What You're Looking For?</h2>
+            <p class="lead mb-4">Contact our team for special requests or premium vehicle options</p>
+            <a href="contact.html" class="btn btn-light btn-lg px-4">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5><i class="fas fa-car me-2"></i>DriveEasy</h5>
+                    <p>Premium car rental service offering the best vehicles at competitive prices with exceptional customer service.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="vehicles.html" class="text-white">Vehicles</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a
