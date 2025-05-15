@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My new Web page</title>
+        <style>
+            .divform {
+                margin-left: 400px;
+                border: 5px solid blue;
+                width: 300px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .showdata{
+                margin-left: 400px;
+                border: 5px solid blue;
+                width: 300px;
+                padding: 10px;
+                border-radius: 10px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to My New Web Page</h1>
+
+        <h2>Names Of Product</h2>
+        <table border="10" width="1006">
+    
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Sale</th>
+        </tr>
+        <tr>
+            <td>Chair</td>
+            <td>1500</td>
+            <td>20%</td>
+        </tr>
+        <tr>
+            <td>Iphone 14pro Max</td>
+            <td>240000</td>
+            <td>15%</td>
+        </tr>
+        <tr>
+            <td>Ipad</td>
+            <td>300000</td>
+            <td>28%</td>
+        </tr>
+        <tr>
+            <td>Osaka Battery</td>
+            <td>90000</td>
+            <td>35%</td>
+        </tr>
+        <tr>
+            <td>Power Bank</td>
+            <td>15000</td>
+            <td>58%</td>
+        </tr>
+        <h3>country Names</h3>
+        
+        <ul>
+            <li>UNITED STATES</li>
+            <li>UNITED KINGDOM</li>
+            <Li>TURKEY</Li>
+            <li>CHINA</li>
+            
+        </ul>
+        </table><br>
+
+        <div class="divform">
+        <form action="#">
+            <label for="Pname">product Name: </label>
+            <input type="text" id="Pname" ><br><br>
+            <label for="Amount">Quantity:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" id="Amount"><br><br>
+            <label for="Pprice">Product Name: </label>
+            <input type="number" id="Pprice"> <br><br>
+            <label for="Psale">Product Sale: </label>&nbsp;&nbsp;
+            <input type="number" id="Psale"><br><br>
+
+            <label for="product">Choose Product: </label>
+            <select name="product" id="product">
+            <option value="Chair">chair</option>
+            <option value="Iphone14 pro Max">BMW</option>
+            <option value="Ipad">Ipad</option>
+            <option value="Osaka Battery">Osaka Battery</option>
+            <option value="Power Bank">Power Bank</option>
+            </select>
+            <button id="submit">Submit</button>
+
+        </form>
+        </div><br>
+        <div class="showdata">
+                <p>Product Name : <span id="showProductname"></span></p>
+                <p>Amount : <span id="showAmount"></span></p>
+                
+        </div>
+    </body>
+    <script>
+        var product_name="Ipad"
+        document.getElementById("showProductname").innerText=product_name
+    </script>
+</html>
